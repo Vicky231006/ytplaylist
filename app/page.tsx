@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import { Box, TextField, Button, Typography, Container, Paper, useTheme, List, ListItem, ListItemText, ListItemAvatar, Avatar, ListItemButton, Alert, Snackbar } from '@mui/material';
+import { Box, TextField, Button, Typography, Container, Paper, List, ListItem, ListItemText, ListItemAvatar, Avatar, ListItemButton, Alert, Snackbar } from '@mui/material';
 import YouTube, { YouTubeEvent, YouTubePlayer } from 'react-youtube';
 import { ThemeProvider } from '../components/ThemeProvider';
 import { getPlaylistVideos } from '../utils/youtube';
@@ -14,13 +14,11 @@ interface Video {
 
 export default function Home() {
   const [playlistUrl, setPlaylistUrl] = useState('');
-  const [playlistId, setPlaylistId] = useState('');
   const [videos, setVideos] = useState<Video[]>([]);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const playerRef = useRef<YouTubePlayer | null>(null);
-  const theme = useTheme();
 
   const extractPlaylistId = (url: string) => {
     const regex = /[&?]list=([^&]+)/;
@@ -40,7 +38,6 @@ export default function Home() {
 
     try {
       setLoading(true);
-      setPlaylistId(id);
       const playlistVideos = await getPlaylistVideos(id);
       setVideos(playlistVideos);
       if (playlistVideos.length === 0) {
