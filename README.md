@@ -1,24 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YouTube Playlist Streamer
+
+A web application that allows users to stream YouTube playlists with continuous playback and no ads. Built with Next.js, Material-UI, and the YouTube Data API.
+
+## Features
+
+- Stream YouTube playlists without interruptions
+- Automatic video looping for single videos
+- Light/Dark mode support
+- Mobile-friendly design
+- Background playback support
+- No ads
+- Responsive UI with video thumbnails
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Vicky231006/ytplaylist.git
+cd ytplaylist
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env.local` file in the root directory and add your YouTube Data API key:
+```
+NEXT_PUBLIC_YOUTUBE_API_KEY=your_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+npm run dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Environment Variables
+
+- `NEXT_PUBLIC_YOUTUBE_API_KEY`: Your YouTube Data API key (required)
+
+## Deployment
+
+This project is configured for easy deployment on Vercel. Simply connect your GitHub repository to Vercel and it will automatically deploy your application.
+
+Make sure to add your YouTube API key to the environment variables in your Vercel project settings.
+
+## Built With
+
+- [Next.js](https://nextjs.org/)
+- [Material-UI](https://mui.com/)
+- [YouTube Data API](https://developers.google.com/youtube/v3)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## Learn More
 
